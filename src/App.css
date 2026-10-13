@@ -2779,3 +2779,60 @@ em {
 .contact-flower {
   z-index: 0;
 }
+
+/* Minimal circle decorations */
+.decor {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+}
+
+.decor-one {
+  top: 9%;
+  left: 4%;
+  color: var(--terracotta);
+}
+
+.decor-two {
+  right: 5%;
+  bottom: 8%;
+  color: var(--sage);
+}
+
+.decor-three {
+  right: 13%;
+  top: 20%;
+  color: var(--rose);
+}
+
+.contact-dots {
+  position: absolute;
+  right: 7%;
+  bottom: 26px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgb(233 215 169 / 65%);
+  pointer-events: none;
+}
+
+.contact-dots svg:nth-child(2) {
+  color: var(--rose-light);
+}
+
+.contact-dots svg:nth-child(3) {
+  color: rgb(255 253 249 / 60%);
+}
+
+.contact-panel {
+  isolation: isolate;
+}
+
+.contact-panel > :not(.contact-dots) {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-panel .contact-dots {
+  z-index: 0;
+}

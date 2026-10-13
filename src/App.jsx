@@ -5,15 +5,14 @@ import {
   ArrowRight,
   ArrowUpRight,
   BrainCircuit,
+  Circle,
   Code2,
-  Flower2,
   Github,
   GraduationCap,
   Layers3,
   Mail,
   Menu,
   Palette,
-  Sparkles,
   X,
 } from "lucide-react";
 import "./App.css";
@@ -81,35 +80,17 @@ const skillGroups = [
   {
     title: "Frontend",
     icon: Code2,
-    skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Vite",
-      "Responsive design",
-    ],
+    skills: ["HTML", "CSS", "JavaScript", "React", "Vite", "Responsive design"],
   },
   {
     title: "Design",
     icon: Palette,
-    skills: [
-      "UI design",
-      "Typography",
-      "Layout",
-      "Interactive interfaces",
-    ],
+    skills: ["UI design", "Typography", "Layout", "Interactive interfaces"],
   },
   {
     title: "Development tools",
     icon: Layers3,
-    skills: [
-      "Git",
-      "GitHub",
-      "Node.js",
-      "Express",
-      "API integration",
-    ],
+    skills: ["Git", "GitHub", "Node.js", "Express", "API integration"],
   },
   {
     title: "AI & speech processing",
@@ -126,6 +107,18 @@ const skillGroups = [
     ],
   },
 ];
+
+function Dot({ variant = "filled", size = 8, className = "" }) {
+  return (
+    <Circle
+      className={className}
+      size={size}
+      strokeWidth={variant === "outlined" ? 1.2 : 0}
+      fill={variant === "filled" ? "currentColor" : "none"}
+      aria-hidden="true"
+    />
+  );
+}
 
 function SectionTitle({ eyebrow, children, description }) {
   return (
@@ -159,18 +152,12 @@ export default function App() {
             {menuOpen ? <X /> : <Menu />}
           </button>
 
-          <div
-            className={`nav-links ${menuOpen ? "nav-links-open" : ""}`}
-          >
+          <div className={`nav-links ${menuOpen ? "nav-links-open" : ""}`}>
             <a href="#about" onClick={closeMenu}>About</a>
             <a href="#projects" onClick={closeMenu}>Projects</a>
             <a href="#skills" onClick={closeMenu}>Skills</a>
             <a href="#journey" onClick={closeMenu}>Journey</a>
-            <a
-              className="nav-cta"
-              href="#contact"
-              onClick={closeMenu}
-            >
+            <a className="nav-cta" href="#contact" onClick={closeMenu}>
               Let's talk <ArrowUpRight size={15} />
             </a>
           </div>
@@ -209,7 +196,7 @@ export default function App() {
             <div className="portrait-card">
               <div className="portrait-top">
                 <span>A LITTLE INTRODUCTION</span>
-                <Sparkles size={16} aria-hidden="true" />
+                <Dot variant="outlined" size={12} />
               </div>
 
               <div className="portrait">
@@ -233,22 +220,24 @@ export default function App() {
             </div>
 
             <div className="float-tag tag-two">
-              <Sparkles size={15} aria-hidden="true" />
+              <Dot variant="filled" size={7} />
               Frontend + UI enthusiast
             </div>
 
-            <Sparkles
+            <Dot
               className="decor decor-one"
-              size={25}
-              strokeWidth={1.5}
-              aria-hidden="true"
+              variant="outlined"
+              size={30}
             />
-
-            <Flower2
+            <Dot
               className="decor decor-two"
-              size={27}
-              strokeWidth={1.5}
-              aria-hidden="true"
+              variant="filled"
+              size={9}
+            />
+            <Dot
+              className="decor decor-three"
+              variant="filled"
+              size={5}
             />
           </div>
 
@@ -262,26 +251,22 @@ export default function App() {
             <div className="about-aside">
               <span className="eyebrow about-eyebrow">ABOUT ME</span>
             </div>
-
             <div className="about-copy">
               <h2>
                 A bit about what <em>I do.</em>
               </h2>
-
               <p>
-                With a background in Computer Science and Engineering,
-                I'm interested in building websites and applications
-                that are useful, easy to navigate, and enjoyable to use.
+                With a background in Computer Science and Engineering, I'm
+                interested in building websites and applications that are
+                useful, easy to navigate, and enjoyable to use.
               </p>
-
               <p>
-                My projects range from e-commerce websites to
-                AI-powered applications and interactive games. I'm
-                looking for an entry-level software development role
-                where I can contribute my skills, collaborate with a
-                team, and continue learning through practical experience.
+                My projects range from e-commerce websites to AI-powered
+                applications and interactive games. I'm looking for an
+                entry-level software development role where I can contribute
+                my skills, collaborate with a team, and continue learning
+                through practical experience.
               </p>
-
               <a className="text-link" href="#projects">
                 A look at what I've built <ArrowRight size={16} />
               </a>
@@ -303,12 +288,8 @@ export default function App() {
                 <article className="project-card" key={project.number}>
                   <div className="project-copy">
                     <div className="project-topline">
-                      <span className="project-number">
-                        {project.number}
-                      </span>
-                      <span
-                        className={`project-status status-${project.visual}`}
-                      >
+                      <span className="project-number">{project.number}</span>
+                      <span className={`project-status status-${project.visual}`}>
                         {project.type}
                       </span>
                     </div>
@@ -336,8 +317,7 @@ export default function App() {
                         </a>
                       ) : project.platform ? (
                         <span className="project-platform">
-                          <Code2 size={14} />
-                          {project.platform}
+                          <Code2 size={14} /> {project.platform}
                         </span>
                       ) : null}
                     </div>
@@ -353,9 +333,7 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div
-                    className={`project-image-wrap project-image-${project.visual}`}
-                  >
+                  <div className={`project-image-wrap project-image-${project.visual}`}>
                     <img
                       className="project-screenshot"
                       src={project.image}
@@ -411,16 +389,13 @@ export default function App() {
                   <span className="certification-icon">
                     <GraduationCap size={22} />
                   </span>
-                  <span className="certification-status completed">
-                    Completed
-                  </span>
+                  <span className="certification-status completed">Completed</span>
                 </div>
-
                 <span className="eyebrow">HARVARD UNIVERSITY</span>
                 <h3>CS50x: Introduction to Computer Science</h3>
                 <p>
-                  Completed in 2024. A foundation in computer science
-                  and programming.
+                  Completed in 2024. A foundation in computer science and
+                  programming.
                 </p>
                 <a
                   className="certification-note certificate-link"
@@ -441,12 +416,11 @@ export default function App() {
                     In progress
                   </span>
                 </div>
-
                 <span className="eyebrow">META · COURSERA</span>
                 <h3>Meta Front-End Developer Professional Certificate</h3>
                 <p>
-                  Currently pursuing the nine-course program, with one
-                  course completed and the second nearly complete.
+                  Currently pursuing the nine-course program, with one course
+                  completed and the second nearly complete.
                 </p>
                 <div
                   className="course-progress"
@@ -456,8 +430,7 @@ export default function App() {
                   <span />
                 </div>
                 <span className="certification-note">
-                  1 of 9 courses completed · Course 2 approximately 90%
-                  complete
+                  1 of 9 courses completed · Course 2 approximately 90% complete
                 </span>
               </article>
             </div>
@@ -524,9 +497,9 @@ export default function App() {
               </h2>
 
               <p>
-                I'm looking for entry-level software development roles
-                focused on frontend development, as well as paid
-                internships that offer hands-on experience.
+                I'm looking for entry-level software development roles focused
+                on frontend development, as well as paid internships that offer
+                hands-on experience.
               </p>
 
               <a
@@ -545,7 +518,6 @@ export default function App() {
                 >
                   <Github size={16} /> GitHub
                 </a>
-
                 <a
                   href="https://www.linkedin.com/in/fida-sathar"
                   target="_blank"
@@ -555,8 +527,10 @@ export default function App() {
                 </a>
               </div>
 
-              <div className="contact-flower" aria-hidden="true">
-                <Flower2 size={34} strokeWidth={1.2} />
+              <div className="contact-dots" aria-hidden="true">
+                <Dot variant="outlined" size={26} />
+                <Dot variant="filled" size={7} />
+                <Dot variant="outlined" size={12} />
               </div>
             </div>
           </div>
