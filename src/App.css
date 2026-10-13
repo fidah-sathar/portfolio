@@ -2836,3 +2836,26 @@ em {
 .contact-panel .contact-dots {
   z-index: 0;
 }
+
+/* Refine the contact section's decorative dots */
+.contact-dots {
+  right: 28px;
+  bottom: 26px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgb(233 215 169 / 65%);
+}
+
+/* Hide the old hero decorations if they look misplaced */
+.decor {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .contact-dots {
+    right: 18px;
+    bottom: 18px;
+    gap: 6px;
+  }
+}
