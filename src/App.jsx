@@ -542,7 +542,7 @@ export default function App() {
           <a className="logo" href="#home">
             fida<span>.</span>
           </a>
-          <span>Designed with intention. Built with curiosity.</span>
+          
           <a href="#home">Back to top ↑</a>
         </div>
       </footer>
