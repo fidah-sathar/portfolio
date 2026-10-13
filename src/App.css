@@ -2859,3 +2859,14 @@ em {
     gap: 6px;
   }
 }
+
+/* Remove decorative dots from the contact panel */
+.contact-dots {
+  display: none !important;
+}
+
+.contact-decoration,
+.decoration-left,
+.decoration-right {
+  display: none !important;
+}
