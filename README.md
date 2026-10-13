@@ -37,5 +37,5 @@ npm run dev
 
 - **Portfolio:** https://fidahsathar.vercel.app/
 - **GitHub:** https://github.com/fidah-sathar
-- **LinkedIn:** https://www.linkedin.com/in/fida-sathar
+- **LinkedIn:** https://www.linkedin.com/in/fidahsathar
 - **Email:** fidahsathar@gmail.com
