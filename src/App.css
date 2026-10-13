@@ -2743,3 +2743,39 @@ em {
   margin-left: 8px;
   font-size: 11px;
 }
+
+/* Consistent decorative icons across desktop and mobile */
+.decor {
+  display: block;
+  fill: none;
+  flex-shrink: 0;
+}
+
+.decor-one {
+  color: var(--terracotta);
+}
+
+.decor-two {
+  color: var(--sage);
+}
+
+.contact-flower {
+  position: absolute;
+  right: 7%;
+  bottom: 24px;
+  color: rgb(233 215 169 / 35%);
+  pointer-events: none;
+}
+
+.contact-panel {
+  isolation: isolate;
+}
+
+.contact-panel > :not(.contact-flower) {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-flower {
+  z-index: 0;
+}
